@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <h1> Calcolatrice </h1>
+  <div>
+    Primo valore: <input type="number" id="n1">
+    Secondo valore: <input type="number" id="n2">
+    Risultato: <input type="number" id="res" value = "0" >
+  </div>
+  <br>
+  <div>
+    <button type="button" onclick="calculator('+')" id="+"> + </button>
+    <br>
+    <button type="button" onclick="calculator('-')" id="-"> - </button>
+    <br>
+    <button type="button" onclick="calculator('*')" id="*"> * </button>
+    <br>
+    <button type="button" onclick="calculator('/')" id="/"> / </button>
+    <br>
+    <button type="button" onclick="calculator('R')" id="R"> R </button>
+    <br>
+    <button type="button" onclick="calculator('=')" id="="> = </button>
+    <br>
+    <textarea rows="10" cols="50" id="log" disabled="true"> Log operazioni </textarea>  
+  </div>
+</body>
+</html>
