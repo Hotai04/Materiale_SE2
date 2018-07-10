@@ -43,7 +43,7 @@ var msgs =
 
 function searchUser(user)
 {
-    return users.find(function(u)
+    users.find(function(u)
     {
         if(u.username == user)
         {
@@ -67,9 +67,15 @@ function searchRoom(room)
 
 app.get('/', function(req, res)
 {
-    res.send("Hello");
+    res.send("Welcome");
 })
-app.get('/user/:value', function(req,res)
+
+app.get('/users', function(req, res)
+{
+    res.send(users);
+})
+
+app.get('/users/:value', function(req,res)
 {
     var user = searchUser(req.params.value); 
     if(!user)
@@ -81,7 +87,7 @@ app.get('/user/:value', function(req,res)
         res.send(user);
     }
 });
-app.post('/user', function(req,res)
+app.post('/users', function(req,res)
 {
     var user = searchUser(req.body.username);
     if(!user)
@@ -99,7 +105,7 @@ app.post('/user', function(req,res)
         res.send("Utente già presente");
     }
 });
-app.put('/user/:value', function(req,res)
+app.put('/users/:value', function(req,res)
 {
     var user = searchUser(req.params.value);
     if(!user)
